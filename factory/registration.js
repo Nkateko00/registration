@@ -10,7 +10,7 @@ function regNumbers(registration) {
                 newList.push(current);
                 //always push to empty list/array
             }
-            if (vurrent.startsWith("CK")) {
+            if (current.startsWith("CK")) {
                 newList.push(current);
             }
             if (current.startsWith("CY")) {
@@ -19,16 +19,22 @@ function regNumbers(registration) {
         }
     }
     function getRegistration(regNum) {
+        //regex
+        if(regNum !== ""){
+            var regularExpression
+            if()
+        }
         myList.push(regNum);
     }
 
-    function recievedRegistrations(regis) {
+    function regDisplay(regis) {
+        return myList;
 
     }
 
     return {
         regList,
-        recievedRegistrations,
+        regDisplay,
         getRegistration
 
     }
