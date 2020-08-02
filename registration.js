@@ -8,30 +8,31 @@ const latestList = document.querySelector(".mainList");
 const clearScreen = document.querySelector(".clearBtn");
 const display = document.getElementById("showReg");
 
-var regContainer =  regNumbers(storingData);
+var regContainer = regNumbers(storingData);
 
-function displayReg(){
-	var stored =  regContainer.regDisplay();
+function displayReg() {
+	var stored = regContainer.regDisplay();
 
-	for(var i =0;i<stored.length;i++){
+	for (var i = 0; i < stored.length; i++) {
 		var latestStored = stored[i];
-		var docDisplay = document.createElement("li") ;
+		var docDisplay = document.createElement("li");
 
 		docDisplay.innerHTML = latestStored;
 		latestList.appendChild(docDisplay);
 
 	}
 }
-displayReg();
-addRegNumberBtn.addEventListener("click", function() {
 
-	if (regNumberEntered.value == "") {
-		message.innerHTML = "Please enter a registration number";
-		return;
-	}
+function addBtnClick() {
+	displayReg();
+	latestList.innerHTML("");
+	addRegNumberBtn.addEventListener("click", function () {
 
-	regNumber.innerHTML = regNumberEntered.value;
-});
+		if (regNumberEntered.value == "") {
+			message.innerHTML = "Please enter a registration number";
+			return;
+		}
 
-
-
+		regNumber.innerHTML = regNumberEntered.value;
+	});
+}
