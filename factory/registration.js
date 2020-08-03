@@ -41,10 +41,14 @@ function regNumbers(registration) {
         return myList;
 
     }
+    function clearData (){
+        myList = [];
+    }
 
     return {
         selectedTown,
         regDisplay,
+        clearData,
         getRegistration
 
     }
