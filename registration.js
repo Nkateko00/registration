@@ -3,7 +3,7 @@
 // if (storeRegistration) {
 //     allReg = JSON.parse(storeRegistration);
 // }
-var data = localStorage['getPlates'] ? JSON.parse(localStorage['getPlates']) : [];
+var data = localStorage['getPlates'] ? JSON.parse(localStorage['getPlates']) : {};
 
 const regNumberEntered = document.querySelector(".regNumberEntered");
 const regNumb = document.querySelector(".regNumbers");
@@ -45,7 +45,7 @@ addRegNumberBtn.addEventListener("click", function () {
 
 	var reg = regContainer.regDisplay();
 	displayReg();
-	localStorage["getPlates"] = JSON.stringify(reg);
+	localStorage["getPlates"] = JSON.stringify(regContainer.regDisplay());
 
 	if (radioButton) {
 		latestList.innerHTML = "";

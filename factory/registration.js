@@ -1,6 +1,6 @@
 function regNumbers(registration) {
 
-    var myList = registration || [];
+    var myList = registration || {};
 
     function selectedTown(regPlate) {
 
@@ -26,7 +26,7 @@ function regNumbers(registration) {
         // use .test() to  test the regNumber & the regEx
         //list doesnt iclude same number push
         if (regNum !== "") {
-            var regularExpression = /C[YJA] \d{3}[\s]? \d{3}[\s]?/g
+            var regularExpression = /C[YJA] \d{3}[-]? \d{3}[\s]?/g
             if (regularExpression.test(regNum) && !myList.includes(regNum)) {
                 myList.push(regNum)
             }
@@ -36,19 +36,25 @@ function regNumbers(registration) {
         }
         myList.push(regNum);
     }
+    function addReg (regNumb){
+        if(myList[regNumb]===undefined){
+            myList[regNumb] = 0;
+        }
+    }
 
     function regDisplay(regis) {
         return myList;
 
     }
     function clearData (){
-        myList = [];
+        myList = {};
     }
 
     return {
         selectedTown,
         regDisplay,
         clearData,
+        addReg,
         getRegistration
 
     }
