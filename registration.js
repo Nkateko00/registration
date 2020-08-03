@@ -6,7 +6,7 @@
 var data = localStorage['getPlates'] ? JSON.parse(localStorage['getPlates']) : [];
 
 const regNumberEntered = document.querySelector(".regNumberEntered");
-const regNumbers = document.querySelector(".regNumbers");
+const regNumb = document.querySelector(".regNumbers");
 const addRegNumberBtn = document.querySelector(".addRegNumber");
 const message = document.querySelector(".message");
 const latestList = document.querySelector(".mainList");
@@ -20,18 +20,18 @@ function displayReg() {
 
 	for (var i = 0; i < stored.length; i++) {
 		var latestStored = stored[i];
-		var docDisplay = document.createElement("li");
+		var regDisplay = document.createElement("li");
 
-		docDisplay.innerHTML = latestStored;
-		latestList.appendChild(docDisplay);
+		regxDisplay.innerHTML = latestStored;
+		latestList.appendChild(regDisplay);
 
 	}
 }
 
 addRegNumberBtn.addEventListener("click", function () {
-	regNumber.innerHTML = regNumberEntered.value;
+	regNumb.innerHTML = regNumberEntered.value;
 	var radioButton = document.querySelector("input[name ='town']:checked");
-	latestList.innerHTML("");
+	latestList.innerHTML = "";
 	if (regNumberEntered.value === "") {
 		message.innerHTML = "Please enter a registration number";
 
@@ -57,7 +57,7 @@ addRegNumberBtn.addEventListener("click", function () {
 		latestList.appendChild(newFiltered);
 }
 });
-resetButton.addEventListener("click", function () {
+clearScreen.addEventListener("click", function () {
 	regContainer.clearData();
 	localStorage.clear();
 	location.reload();
